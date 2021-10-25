@@ -1,0 +1,139 @@
+@startuml
+TodoListGroup o-- TodoList
+TodoList o-- ListItem
+Application o-- TodoListGroup
+Application o-- FXMLController
+FXMLController o-- AddItemDialogBox
+FXMLController o-- AddListDialogBox
+FXMLController o-- DeleteItemDialogBox
+FXMLController o-- DeleteListDialogBox
+FXMLController o-- SaveDialogBox
+
+class SaveDialogBox {
+-File file
+-Button cancelButton
+-Button chooseFileButton
+-TextField filePathDisplay
+-Button saveListsButton
+-TodoListGroup todoListGroup
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void chooseFile()
+~void closeDialogBox()
+~void saveListsToFile()
+}
+
+class DeleteListDialogBox {
+-TodoListGroup todoListGroup
+-Button cancelButton
+-Button deleteItemButton
+-ChoiceBox<?> titleOfList
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void closeDialogBox()
+~void deleteList()
+}
+
+class DeleteItemDialogBox {
+-TodoListGroup todoListGroup
+-Button cancelButton
+-ChoiceBox<?> itemChoiceBox
+-ChoiceBox<?> listChoiceBox
+-Button removeItemButton
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void closeDialogBox()
+~void removeItem()
+}
+
+class AddListDialogBox {
+-TodoListGroup todoListGroup
+-Button cancelButton
+-Button createItemButton
+-TextField titleOfList
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void closeDialogBox()
+~void createList()
+}
+
+class AddItemDialogBox {
+-TodoListGroup todoListGroup
+-Button cancelButton
+-Button createItemButton
+-TextField descriptionOfNewItem
+-DatePicker dueDateOfNewItem
+-ChoiceBox<?> listChoiceBox
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void closeDialogBox()
+~void createItem(MouseEvent event)
+}
+
+class FXMLController {
+-{static} final String STYLES_CSS_URI_STRING
+-TodoListGroup todoListGroup
+-MenuItem addItemButton
+-MenuItem addListButton
+-MenuItem deleteItemButton
+-MenuItem deleteListButton
+-MenuItem loadButton
+-MenuItem saveButton
++void setTodoListGroup(TodoListGroup todoListGroup)
+~void openAddItemDialogBox()
+~void openAddListDialogBox()
+~void openDeleteItemDialogBox()
+~void openDeleteListDialogBox()
+~void openLoadDialogBox()
+~void openSaveDialogBox()
+}
+
+class Application {
++TodoListGroup listGroup
++void start(Stage stage)
+}
+
+note right of TodoListGroup : The reason why the methods in are package\nprotected and repeated is that while the items and\nthe information they hold are private, they still need\nto be accessed somehow. They're accessed\nthrough the TodoListGroup that stores them and\nonly that TodoListGroup (and the ListItem's \nTodoList, if applicable), which both aren't \nsubclasses, and thus they can only be package \nprotected, and nothing more secure.
+
+class TodoListGroup {
+-ArrayList<TodoList> listOfLists
++void writeListsToFile(Path pathToFile)
++void readListsFromFile(Path pathToFile)
++void addList(String title)
++void removeList(int index)
++void setTitleOfList(int index, String title)
++void getTitleOfList(int index)
++void addItemToList(int listIndex)
++void removeItemFromList(int listIndex, int itemIndex)
++void setDescriptionForItem(int listIndex, int itemIndex, String description)
++void setDueDateForItem(int listIndex, int itemIndex, Calendar dueDate)
++void changeContentsOfItem(int listIndex, int itemIndex, String contents)
++String getDescriptionOfItem(int listIndex, int itemIndex)
++Calendar getDueDateOfItem(int listIndex, int itemIndex)
++String getContentsOfItem(int listIndex, int itemIndex)
+}
+
+note right of TodoList : Furthermore, any repeated methods are called from the \nTodoListGroup, then passed into the TodoList (and if \napplicable, again to the ListItem) for processing.
+
+class TodoList {
+-String title
+-ArrayList<ListItem> listOfItems
+~void addItem()
+~void removeItem(int index)
+~void setTitleOfList(String title)
+~void getTitleOfList()
+~void setDescriptionForItem(int itemIndex, String description)
+~void setDueDateForItem(int itemIndex, Calendar dueDate)
+~void changeContentsOfItem(int itemIndex, String contents)
+~String getDescriptionOfItem(int itemIndex)
+~Calendar getDueDateOfItem(int itemIndex)
+~String getContentsOfItem(int itemIndex)
+}
+
+class ListItem {
+-String description
+-Calendar dueDate
+-String contents
+~void setDescription(String description)
+~void setDueDate(Calendar dueDate)
+~void changeContents(String contents)
+~String getDescriptionOfItem()
+~Calendar getDueDateOfItem()
+~String getContentsOfItem()
+}
+@enduml

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minViewportHeight="240.0" minViewportWidth="320.0" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baseline.FXMLController">
+   <content>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="478.0" minWidth="638.0">
+         <children>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="480.0" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="480.0" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#openLoadDialogBox" text="Load" />
+                              <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#openSaveDialogBox" text="Save" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                          <items>
+                            <Menu mnemonicParsing="false" text="Add">
+                              <items>
+                                <MenuItem fx:id="addListButton" mnemonicParsing="false" onAction="#openAddListDialogBox" text="Add To-Do List" />
+                                    <MenuItem fx:id="addItemButton" mnemonicParsing="false" onAction="#openAddItemDialogBox" text="Add Item" />
+                              </items>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="Delete">
+                                 <items>
+                                    <MenuItem fx:id="deleteListButton" mnemonicParsing="false" onAction="#openDeleteListDialogBox" text="Delete To-Do List" />
+                                    <MenuItem fx:id="deleteItemButton" mnemonicParsing="false" onAction="#openDeleteItemDialogBox" text="Delete Item" />
+                                 </items>
+                              </Menu>
+                          </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+               <children>
+                  <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="455.0" minWidth="640.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab closable="false" text="List Example">
+                           <content>
+                              <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="426.0" minWidth="640.0">
+                                <tabs>
+                                  <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </content>
+                      </Tab>
+                        <Tab closable="false" text="List Example">
+                           <content>
+                              <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="426.0" minWidth="640.0">
+                                 <tabs>
+                                    <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab closable="false" text="Item Example">
+                                       <content>
+                                          <AnchorPane minHeight="397.0" minWidth="640.0">
+                                             <children>
+                                                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="5.0" right="5.0" top="32.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="640.0" prefHeight="30.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <children>
+                                                      <StackPane alignment="CENTER_LEFT" layoutY="2.0" maxWidth="1.7976931348623157E308" minWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " translateX="10.0" />
+                                                            <TextField alignment="TOP_LEFT" maxHeight="25.0" maxWidth="1.7976931348623157E308" minWidth="100.0" promptText="Description goes here" translateX="80.0">
+                                                               <StackPane.margin>
+                                                                  <Insets />
+                                                               </StackPane.margin>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets right="400.0" />
+                                                         </padding>
+                                                      </StackPane>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Complete by:" translateX="-190.0" />
+                                                            <DatePicker promptText="Date" translateX="-10.0" />
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
